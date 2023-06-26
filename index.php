@@ -10,45 +10,42 @@
 </head>
 <body>
     <h1>Isikan Data Makanan yang Akan Ditampilkan</h1>
-    <form action="order.php" method="POST" enctype="multipart/form-data">
+    <form action="index.php" method="POST" enctype="multipart/form-data">
         <p>
             <label>Kode Makanan : </label>
-            <input type="text" name="txtkode" id="txtkode">
+            <input type="text" name="txtkode">
         </p>
         <p>
             <label>Nama Makanan : </label>
-            <input type="text" name="txtnama" id="txtnama">
+            <input type="text" name="txtnama">
         </p>
         <p>
             <label>Harga Makanan : </label>
-            <input type="number" name="txtharga" id="txtharga">
+            <input type="number" name="txtharga">
         </p>
         <p>
             <label>Alamat Foto Makanan : </label>
-            <input type="url" name="txturl" id="txturl">
+            <input type="url" name="txturl">
         </p>
         <p>
-            <input type="button" value="Masukkan" name="btnmasuk">
+            <input type="submit" value="Masukkan" name="btnmasuk">
         </p>
     </form>
-    <?php 
-        if (isset($_SESSION["makanan"])) {
-            $arr_makanan = $_SESSION["makanan"];
-        }
-
-        if (isset($_POST["btnmasuk"])) {
-            $makanan = array(
-                "kode" => $_POST["txtkode"],
-                "nama" => $_POST["txtnama"],
-                "harga" => $_POST["txtharga"],
-                "url" => $_POST["txturl"]
-            );
-
-            $arr_makanan = $makanan;
-            $_SESSION["makanan"] = $arr_makanan;
-        }
-
-        header("Location:index.php");
-    ?>
 </body>
+<?php
+    if (isset($_SESSION["makanan"])) {
+        $arr_makanan = $_SESSION["makanan"];
+    }
+
+    if (isset($_POST["btnmasuk"])) {
+        $makanan = array(
+            "kode" => $_POST["txtkode"],
+            "nama" => $_POST["txtnama"],
+            "harga" => $_POST["txtharga"],
+            "url" => $_POST["txturl"]
+        );
+        
+        $_SESSION["makanan".count($_SESSION)] = $makanan;
+    }
+?>
 </html>
