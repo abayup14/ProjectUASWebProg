@@ -1,11 +1,8 @@
 <?php
 session_start();
 
-if (isset($_SESSION["order"])) {
-    $arr_std = $_SESSION["order"];
-}
-else{
-    // header("location: index.php");
+if (isset($_SESSION["makanan"])) {
+    $arr_makanan = $_SESSION["makanan"];
 }
 
 ?>
