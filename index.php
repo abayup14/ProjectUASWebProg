@@ -46,6 +46,8 @@
         );
         
         $_SESSION["makanan".count($_SESSION)] = $makanan;
+
+        print_r($_SESSION);
     }
 ?>
 </html>
