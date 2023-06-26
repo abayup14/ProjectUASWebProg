@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Input Data Makanan</title>
 </head>
 <body>
     <h1>Isikan Data Makanan yang Akan Ditampilkan</h1>
