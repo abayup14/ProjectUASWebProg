@@ -46,8 +46,7 @@
         }
 
         .menu {
-            width: 70%;
-            background: pink;
+            width: 75%;
             float: left;
             margin-right: 50px;
         }
@@ -55,7 +54,6 @@
         .pilihan {
             float: right;
             width: 250px;
-            background: yellow;
         }
 
         #pilihanku {
