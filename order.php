@@ -18,8 +18,10 @@ if (isset($_SESSION["makanan"])) {
         width:"40%"; float:left;
         border-style: solid;
         margin: 5px;
-        margin-right: 40px;
-        margin-bottom: 30px;
+        margin-left: 25px;
+        margin-right: 25px;
+        margin-bottom: 25px;
+        margin-top: 25px;
     }
     img
     {
