@@ -2,7 +2,7 @@
 session_start();
 
 if (isset($_SESSION["makanan"])) {
-    $arr_std = $_SESSION["makanan"];
+    $arr_makanan = $_SESSION["makanan"];
 }
 
 ?>
