@@ -10,7 +10,7 @@
 </head>
 <body>
     <h1>Isikan Data Makanan yang Akan Ditampilkan</h1>
-    <form action="index.php" method="POST" enctype="multipart/form-data">
+    <form action="order.php" method="POST" enctype="multipart/form-data">
         <p>
             <label>Kode Makanan : </label>
             <input type="text" name="txtkode">
@@ -36,7 +36,7 @@
     </form>
 </body>
 <?php
-    if (isset($_SESSION["makanan"])) {
+    /*if (isset($_SESSION["makanan"])) {
         $arr_makanan = $_SESSION["makanan"];
     }
 
@@ -49,7 +49,7 @@
         );
         
         $_SESSION["makanan".count($_SESSION)] = $makanan;
-    }
+    }*/
 
     if (isset($_POST["btnOrder"])) {
         header("location: order.php");

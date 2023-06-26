@@ -2,8 +2,21 @@
 session_start();
 
 if (isset($_SESSION["makanan"])) {
-    $arr_makanan = $_SESSION["makanan"];
-}
+        $arr_makanan = $_SESSION["makanan"];
+    }
+
+    if (isset($_POST["btnmasuk"])) {
+        $makanan = array(
+            "kode" => $_POST["txtkode"],
+            "nama" => $_POST["txtnama"],
+            "harga" => $_POST["txtharga"],
+            "url" => $_POST["txturl"]
+        );
+        
+        $_SESSION["makanan".count($_SESSION)] = $makanan;
+
+        header("location:index.php");
+    }
 
 ?>
 <!DOCTYPE html>
@@ -26,6 +39,7 @@ if (isset($_SESSION["makanan"])) {
     img
     {
         width: 200px;
+        height: 140px;
         text-align:center;
         margin: 5px;
     }
@@ -64,7 +78,18 @@ if (isset($_SESSION["makanan"])) {
 <body>
     <h1>Today Menu: </h1>
     <div class="menu">
-        <div class="katalog">
+        <?php 
+        foreach($arr_makanan as $makanan){
+            echo "<div class='katalog'>";
+            echo '<img src='.$makanan['url'].'>';
+            echo '<h2>'.$makanan['nama'].'</h2>';
+            echo '<h3> Rp'.$makanan['harga'].'</h3>';
+            echo '<button id="btnPilih'.$makanan['kode'].'">Pilih</button>';
+            echo "</div>";
+        }
+        ?>
+
+        <!-- <div class="katalog">
             <img src="images/rendang.jpg">
             <h2>Rendang</h2>
             <h3>Rp. 34.000</h3>
@@ -103,7 +128,7 @@ if (isset($_SESSION["makanan"])) {
             <h2>Rendang</h2>
             <h3>Rp. 34.000</h3>
             <button id="btnPilih">Pilih</button>
-        </div>
+        </div> -->
     </div>
 
     <div class="pilihan">
