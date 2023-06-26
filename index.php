@@ -8,29 +8,34 @@ session_start();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Input Data Makanan</title>
+    <style>
+        span {
+            color: red;
+        }
+    </style>
 </head>
 
 <body>
     <h1>Isikan Data Makanan yang Akan Ditampilkan</h1>
     <form action="index.php" method="POST" enctype="multipart/form-data">
         <p>
-            <label>Kode Makanan : </label>
+            <label>Kode Makanan <span>*</span> : </label>
             <input type="text" name="txtkode">
         </p>
         <p>
-            <label>Nama Makanan : </label>
+            <label>Nama Makanan <span>*</span> : </label>
             <input type="text" name="txtnama">
         </p>
         <p>
-            <label>Harga Makanan : </label>
+            <label>Harga Makanan <span>*</span> : </label>
             <input type="number" name="txtharga">
         </p>
         <p>
-            <label>Alamat Foto Makanan : </label>
+            <label>Alamat Foto Makanan <span>*</span> : </label>
             <input type="url" name="txturl">
         </p>
         <p>
-            <input type="submit" value="Masukkan" name="btnmasuk">
+            <input type="submit" value="Masukkan Data" name="btnmasuk">
         </p>
         <p>
             <input type="submit" value="Menuju halaman Pesan" name="btnOrder">
@@ -46,11 +51,13 @@ if (isset($_POST["btnmasuk"])) {
         "url" => $_POST["txturl"]
     );
 
-    $_SESSION["makanan" . count($_SESSION)] = $makanan;
+    $_SESSION["makanan".count($_SESSION)] = $makanan;
+
+    print_r($_SESSION);
 }
 
 if (isset($_POST["btnOrder"])) {
-    header("location: order.php");
+    header("location:order.php");
 }
 ?>
 
