@@ -30,6 +30,9 @@
         <p>
             <input type="submit" value="Masukkan" name="btnmasuk">
         </p>
+        <p>
+            <input type="submit" value="Menuju halaman Order" name="btnOrder">
+        </p>
     </form>
 </body>
 <?php
@@ -46,8 +49,10 @@
         );
         
         $_SESSION["makanan".count($_SESSION)] = $makanan;
+    }
 
-        print_r($_SESSION);
+    if (isset($_POST["btnOrder"])) {
+        header("location: order.php");
     }
 ?>
 </html>

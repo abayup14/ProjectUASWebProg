@@ -5,7 +5,7 @@ if (isset($_SESSION["order"])) {
     $arr_std = $_SESSION["order"];
 }
 else{
-    header("location: index.php");
+    // header("location: index.php");
 }
 
 ?>
@@ -16,8 +16,16 @@ else{
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Order Makanan</title>
     <style type="text/css">
-    .div { width:"40%"; float:left; }
-    .img { text-align:center; }
+    div
+    {
+        width:"40%"; float:left;
+        border-style: solid;
+    }
+    img
+    {
+        width: 200px;
+        text-align:center;
+    }
     </style>
 </head>
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.7.0.js"></script>
