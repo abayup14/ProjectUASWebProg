@@ -1,8 +1,8 @@
 <?php
 session_start();
 
-if (isset($_SESSION["order"])) {
-    $arr_std = $_SESSION["order"];
+if (isset($_SESSION["makanan"])) {
+    $arr_std = $_SESSION["makanan"];
 }
 
 ?>
