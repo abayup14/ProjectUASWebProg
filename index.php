@@ -1,9 +1,8 @@
 <?php
-session_start();
+    session_start();
 ?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,9 +13,8 @@ session_start();
         }
     </style>
 </head>
-
 <body>
-    <h1>Isikan Data Makanan yang Akan Ditampilkan</h1>
+    <h1>Isikan Data Makanan yang Akan Ditampilkan :</h1>
     <form action="index.php" method="POST" enctype="multipart/form-data">
         <p>
             <label>Kode Makanan <span>*</span> : </label>
@@ -43,22 +41,21 @@ session_start();
     </form>
 </body>
 <?php
-if (isset($_POST["btnmasuk"])) {
-    $makanan = array(
-        "kode" => $_POST["txtkode"],
-        "nama" => $_POST["txtnama"],
-        "harga" => $_POST["txtharga"],
-        "url" => $_POST["txturl"]
-    );
-
-    $_SESSION["makanan".count($_SESSION)] = $makanan;
-
-    print_r($_SESSION);
-}
-
-if (isset($_POST["btnOrder"])) {
-    header("location:order.php");
-}
+    if (isset($_POST["btnmasuk"])) {
+        $makanan = array(
+            "kode" => $_POST["txtkode"],
+            "nama" => $_POST["txtnama"],
+            "harga" => $_POST["txtharga"],
+            "url" => $_POST["txturl"]
+        );
+        
+        $_SESSION["makanan".count($_SESSION)] = $makanan;
+        
+        //print_r($_SESSION);
+    }
+    
+    if (isset($_POST["btnOrder"])) {
+        header("location:order.php");
+    }
 ?>
-
 </html>

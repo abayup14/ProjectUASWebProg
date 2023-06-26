@@ -1,17 +1,16 @@
 <?php
-session_start();
-
-if (isset($_SESSION)) {
-    $arr_makanan = $_SESSION;
-}
+    session_start();
+    
+    if (isset($_SESSION)) {
+        $arr_makanan = $_SESSION;
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Order Makanan</title>
+    <title>Pesan Makanan</title>
     <style type="text/css">
         .katalog {
             width: "40%";
@@ -65,19 +64,18 @@ if (isset($_SESSION)) {
     </style>
 </head>
 <script type="text/javascript" src="https://code.jquery.com/jquery-3.7.0.js"></script>
-
 <body>
-    <h1>Today Menu: </h1>
+    <h1>Inilah Menu untuk Hari Ini : </h1>
     <div class="menu">
         <?php
-        foreach ($arr_makanan as $makanan) {
-            echo "<div class='katalog'>";
-            echo "<img src='".$makanan['url']."'>";
-            echo '<h2>'.$makanan['nama'].'</h2>';
-            echo '<h3> Rp'.$makanan['harga'].'</h3>';
-            echo "<button id='btnPilih".$makanan['kode']."'>Pilih</button>";
-            echo "</div>";
-        }
+            foreach ($arr_makanan as $makanan) {
+                echo "<div class='katalog'>";
+                echo "<img src='".$makanan['url']."'>";
+                echo '<h2>'.$makanan['nama'].'</h2>';
+                echo '<h3> Rp '.$makanan['harga'].'</h3>';
+                echo "<button id='btnPilih".$makanan['kode']."'>Pilih</button>";
+                echo "</div>";
+            }
         ?>
     </div>
 
