@@ -61,7 +61,7 @@
         } else {
             foreach ($_SESSION as $menu) {
                 if ($menu["kode"] == $_POST["txtkode"]) {
-                    echo "<script>alert('Kode makanan sudah digunakan. Silahkan gunakan kode yang lain.')</script>";
+                    echo "<script>alert('Kode makanan sudah digunakan. Gunakan kode yang lain.')</script>";
                 } else {
                     add_menu();
                 }
