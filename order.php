@@ -70,7 +70,7 @@
                 echo "<div class='katalog'>";
                 echo "<img src='".$makanan['url']."'>";
                 echo '<h2>'.$makanan['nama'].'</h2>';
-                echo '<h3> Rp '.$makanan['harga'].'</h3>';
+                echo '<h3> Rp. '.$makanan['harga'].'</h3>';
                 echo "<button id='btnPilih".$makanan['kode']."'>Pilih</button>";
                 echo "</div>";
             }

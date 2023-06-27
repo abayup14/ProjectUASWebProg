@@ -1,5 +1,17 @@
 <?php
     session_start();
+    function add_menu() {
+        $makanan = array(
+            "kode" => $_POST["txtkode"],
+            "nama" => $_POST["txtnama"],
+            "harga" => $_POST["txtharga"],
+            "url" => $_POST["txturl"]
+        );
+
+        $_SESSION["menu".count($_SESSION)] = $makanan;
+
+        //print_r($_SESSION);
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -12,6 +24,7 @@
             color: red;
         }
     </style>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.7.0.js"></script>
 </head>
 <body>
     <h1>Isikan Data Makanan yang Akan Ditampilkan :</h1>
@@ -42,18 +55,20 @@
 </body>
 <?php
     if (isset($_POST["btnmasuk"])) {
-        $makanan = array(
-            "kode" => $_POST["txtkode"],
-            "nama" => $_POST["txtnama"],
-            "harga" => $_POST["txtharga"],
-            "url" => $_POST["txturl"]
-        );
-        
-        $_SESSION["makanan".count($_SESSION)] = $makanan;
-        
-        //print_r($_SESSION);
+        $count = count($_SESSION);
+        if ($count == 0) {
+            add_menu();
+        } else {
+            foreach ($_SESSION as $menu) {
+                if ($menu["kode"] == $_POST["txtkode"]) {
+                    echo "<script>alert('Kode makanan sudah digunakan. Silahkan gunakan kode yang lain.')</script>";
+                } else {
+                    add_menu();
+                }
+            }
+        }
     }
-    
+       
     if (isset($_POST["btnOrder"])) {
         header("location:order.php");
     }
