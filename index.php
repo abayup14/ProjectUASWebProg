@@ -10,7 +10,7 @@
 
         $_SESSION["menu".count($_SESSION)] = $makanan;
 
-        //print_r($_SESSION);
+        // print_r($_SESSION);
     }
 ?>
 <!DOCTYPE html>
@@ -31,26 +31,29 @@
     <form action="index.php" method="POST" enctype="multipart/form-data">
         <p>
             <label>Kode Makanan <span>*</span> : </label>
-            <input type="text" name="txtkode">
+            <input type="text" name="txtkode" required>
         </p>
         <p>
             <label>Nama Makanan <span>*</span> : </label>
-            <input type="text" name="txtnama">
+            <input type="text" name="txtnama" required>
         </p>
         <p>
             <label>Harga Makanan <span>*</span> : </label>
-            <input type="number" name="txtharga">
+            <input type="number" name="txtharga" required>
         </p>
         <p>
             <label>Alamat Foto Makanan <span>*</span> : </label>
-            <input type="url" name="txturl">
+            <input type="url" name="txturl" required>
         </p>
         <p>
             <input type="submit" value="Masukkan Data" name="btnmasuk">
         </p>
-        <p>
-            <input type="submit" value="Menuju halaman Pesan" name="btnOrder">
-        </p>
+    </form>
+
+    <form action="index.php" method="POST" enctype="multipart/form-data">
+    <p>
+        <input type="submit" value="Menuju halaman Pesan" name="btnOrder">
+    </p>
     </form>
 </body>
 <?php
@@ -58,12 +61,14 @@
         $count = count($_SESSION);
         if ($count == 0) {
             add_menu();
+            echo "<script>alert('Makanan berhasil ditambahkan')</script>";
         } else {
             foreach ($_SESSION as $menu) {
                 if ($menu["kode"] == $_POST["txtkode"]) {
                     echo "<script>alert('Kode makanan sudah digunakan. Gunakan kode yang lain.')</script>";
                 } else {
                     add_menu();
+                    echo "<script>alert('Makanan berhasil ditambahkan')</script>";
                 }
             }
         }

@@ -77,6 +77,12 @@
         ?>
     </div>
 
+    <script type="text/javascript">
+        $("#btnPilih1").click(function(){
+            $("#btnPilih1").attr("disabled", true);
+        });
+    </script>
+    
     <div class="pilihan">
         <h1 id="pilihanku">Pilihanku: </h1>
     </div>
