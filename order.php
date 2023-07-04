@@ -97,10 +97,11 @@
     <div class="pilihan">
         <h1 id="pilihanku">Pilihanku: </h1>
         <div class="hargaTambah"></div>
-        <h2>TOTAL : <span id='grandtotal'>0</span></h2>
+        <h2>TOTAL : Rp. <span id='grandtotal'>0</span></h2>
+        <br><br>
         <form action="index.php" method="POST" enctype="multipart/form-data">
             <p>
-                <input type="submit" value="Menuju halaman Index" name="btnIndex">
+                <input type="submit" value="Menuju halaman Masukkan Data" name="btnIndex">
             </p>
         </form>
     </div>
