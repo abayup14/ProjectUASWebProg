@@ -96,7 +96,7 @@
     
     <div class="pilihan">
         <h1 id="pilihanku">Pilihanku: </h1>
-        <p class="hargaTambah"></p>
+        <div class="hargaTambah"></div>
         <h2>TOTAL : <span id='grandtotal'>0</span></h2>
         <form action="index.php" method="POST" enctype="multipart/form-data">
             <p>
