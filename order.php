@@ -80,7 +80,7 @@
     <script type="text/javascript">
         function grandTotal() {
             var total = 0;
-            $("p").each(function() {
+            $(".hargapermenu").each(function() {
                 total += $(this).attr("value") * 1;
             })
             $("#grandtotal").html(total);
@@ -89,15 +89,21 @@
             $(this).attr("disabled", true);
             var nama = $(this).attr('nama');
             var harga = $(this).attr('harga');
-            $(".pilihan").append("<p value='" + harga + "'>" + nama + " (Rp. " + harga + ")</p>");
+            $(".hargaTambah").append("<p class='hargapermenu' value='" + harga + "'>" + nama + " (Rp. " + harga + ")</p>");
             grandTotal();
         });
     </script>
     
     <div class="pilihan">
         <h1 id="pilihanku">Pilihanku: </h1>
+        <p class="hargaTambah"></p>
+        <h2>TOTAL : <span id='grandtotal'>0</span></h2>
+        <form action="index.php" method="POST" enctype="multipart/form-data">
+            <p>
+                <input type="submit" value="Menuju halaman Index" name="btnIndex">
+            </p>
+        </form>
     </div>
-    <h2>TOTAL : <span id='grandtotal'>0</span></h2>
 </body>
 
 </html>
