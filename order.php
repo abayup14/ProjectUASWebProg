@@ -82,7 +82,7 @@
             $(this).attr("disabled", true);
             var nama = $(this).attr('nama');
             var harga = $(this).attr('harga');
-            $(".pilihanku").append("<p>" + nama + " (Rp. " + harga + "</p>");
+            $(".pilihan").append("<p>" + nama + " (Rp. " + harga + "</p>");
         });
     </script>
     
