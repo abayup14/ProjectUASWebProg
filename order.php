@@ -83,7 +83,7 @@
             $("p").each(function() {
                 total += $(this).attr("value");
             })
-            return total;
+            $("#grandtotal").html(total);
         }
         $(".btnPilih").click(function(){
             $(this).attr("disabled", true);
