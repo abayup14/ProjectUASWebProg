@@ -81,7 +81,7 @@
         function grandTotal() {
             var total = 0;
             $("p").each(function() {
-                total += $(this).attr("value");
+                total += $(this).attr("value") * 1;
             })
             $("#grandtotal").html(total);
         }
@@ -96,8 +96,8 @@
     
     <div class="pilihan">
         <h1 id="pilihanku">Pilihanku: </h1>
-        <h2>TOTAL : <span id='grandtotal'>0</span></h2>
     </div>
+    <h2>TOTAL : <span id='grandtotal'>0</span></h2>
 </body>
 
 </html>
