@@ -78,16 +78,25 @@
     </div>
 
     <script type="text/javascript">
+        function grandTotal() {
+            var total = 0;
+            $("p").each(function() {
+                total += $(this).attr("value");
+            })
+            return total;
+        }
         $(".btnPilih").click(function(){
             $(this).attr("disabled", true);
             var nama = $(this).attr('nama');
             var harga = $(this).attr('harga');
-            $(".pilihan").append("<p>" + nama + " (Rp. " + harga + "</p>");
+            $(".pilihan").append("<p value='" + harga + "'>" + nama + " (Rp. " + harga + ")</p>");
+            grandTotal();
         });
     </script>
     
     <div class="pilihan">
         <h1 id="pilihanku">Pilihanku: </h1>
+        <h2>TOTAL : <span id='grandtotal'>0</span></h2>
     </div>
 </body>
 
