@@ -71,15 +71,16 @@
                 echo "<img src='".$makanan['url']."'>";
                 echo '<h2>'.$makanan['nama'].'</h2>';
                 echo '<h3> Rp. '.$makanan['harga'].'</h3>';
-                echo "<button id='btnPilih".$makanan['kode']."'>Pilih</button>";
+                echo "<button class='btnPilih' id='btnPilih".$makanan['kode']."'>Pilih</button>";
                 echo "</div>";
             }
         ?>
     </div>
 
     <script type="text/javascript">
-        $("#btnPilih1").click(function(){
-            $("#btnPilih1").attr("disabled", true);
+        $(".btnPilih").click(function(){
+            $(this).attr("disabled", true);
+
         });
     </script>
     
