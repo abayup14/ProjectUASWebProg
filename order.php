@@ -71,7 +71,7 @@
                 echo "<img src='".$makanan['url']."'>";
                 echo '<h2>'.$makanan['nama'].'</h2>';
                 echo '<h3> Rp. '.$makanan['harga'].'</h3>';
-                echo "<button class='btnPilih' id='btnPilih".$makanan['kode']."'>Pilih</button>";
+                echo "<button class='btnPilih' id='btnPilih".$makanan['kode']."' nama='".$makanan['nama']."' harga='".$makanan['harga']."'>Pilih</button>";
                 echo "</div>";
             }
         ?>
