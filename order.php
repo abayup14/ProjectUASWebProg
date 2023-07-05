@@ -55,7 +55,8 @@
             border: solid 2px;
             padding-left:10px; padding-top:-20px;
             float: right;
-            width: 250px;
+            width: 300px;
+            margin-right:20px;
         }
 
     </style>
