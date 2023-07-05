@@ -52,18 +52,17 @@
         }
 
         .pilihan {
+            border: solid 2px;
+            padding-left:10px; padding-top:-20px;
             float: right;
             width: 250px;
         }
 
-        #pilihanku {
-            margin: 5px;
-        }
     </style>
 </head>
 <script type="text/javascript" src="js/jquery-3.7.0.js"></script>
 <body>
-    <h1>Inilah Menu untuk Hari Ini : </h1>
+    <h1>Inilah Menu untuk Hari Ini</h1>
     <div class="menu">
         <?php
             foreach ($arr_makanan as $makanan) {
@@ -95,7 +94,7 @@
     </script>
     
     <div class="pilihan">
-        <h1 id="pilihanku">Pilihanku: </h1>
+        <h1>Pilihanku: </h1>
         <div class="hargaTambah"></div>
         <h2>TOTAL : Rp. <span id='grandtotal'>0</span></h2>
         <br><br>

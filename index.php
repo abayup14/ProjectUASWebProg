@@ -20,41 +20,65 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Masukkan Data Makanan</title>
     <style>
-        span {
+        .important {
             color: red;
+        }
+        h1 { 
+            text-align: center; 
+        }
+        #container {
+            align: center;
+            width: fit-content;
+            border: solid;
+            margin-top: 10px; margin-bottom: -10px;
+            margin-left: -10px; margin-right: auto;
+            text-align: center;
+            padding-top: 10px; padding-bottom:10px;
+            padding-left: 20px; padding-right: 20px;
+            position:absolute;
+        }
+        #outer {
+            align: center;
+            margin: auto;
+            background: orange;
+            height:265px;
+            width:390px;
         }
     </style>
     <script type="text/javascript" src="js/jquery-3.7.0.js"></script>
 </head>
 <body>
-    <h1>Isikan Data Makanan yang Akan Ditampilkan :</h1>
-    <form action="index.php" method="POST" enctype="multipart/form-data">
-        <p>
-            <label>Kode Makanan <span>*</span> : </label>
-            <input type="text" name="txtkode" required>
-        </p>
-        <p>
-            <label>Nama Makanan <span>*</span> : </label>
-            <input type="text" name="txtnama" required>
-        </p>
-        <p>
-            <label>Harga Makanan <span>*</span> : </label>
-            <input type="number" name="txtharga" required>
-        </p>
-        <p>
-            <label>Alamat Foto Makanan <span>*</span> : </label>
-            <input type="url" name="txturl" required>
-        </p>
-        <p>
-            <input type="submit" value="Masukkan Data" name="btnmasuk">
-        </p>
-    </form>
-
-    <form action="index.php" method="POST" enctype="multipart/form-data">
-    <p>
-        <input type="submit" value="Menuju halaman Pesan" name="btnOrder">
-    </p>
-    </form>
+    <h1>Isikan Data Makanan yang Akan Ditampilkan</h1>
+    <div id="outer">    
+    <div id="container">
+        <form action="index.php" method="POST" enctype="multipart/form-data">
+            <p>
+                <label>Kode Makanan <span class="important">*</span> : </label>
+                <input type="text" name="txtkode" required>
+            </p>
+            <p>
+                <label>Nama Makanan <span class="important">*</span> : </label>
+                <input type="text" name="txtnama" required>
+            </p>
+            <p>
+                <label>Harga Makanan <span class="important">*</span> : </label>
+                <input type="number" name="txtharga" required>
+            </p>
+            <p>
+                <label>Alamat Foto Makanan <span class="important">*</span> : </label>
+                <input type="url" name="txturl" required>
+            </p>
+            <p>
+                <input type="submit" value="Masukkan Data" name="btnmasuk">
+            </p>
+        </form>
+        <form action="index.php" method="POST" enctype="multipart/form-data">
+            <p>
+                <input type="submit" value="Menuju halaman Pesan" name="btnOrder">
+            </p>
+        </form>
+    </div>
+    </div>
 </body>
 <?php
     if (isset($_POST["btnmasuk"])) {
