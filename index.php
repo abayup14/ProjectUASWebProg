@@ -24,7 +24,7 @@
             color: red;
         }
     </style>
-    <script type="text/javascript" src="https://code.jquery.com/jquery-3.7.0.js"></script>
+    <script type="text/javascript" src="js/jquery-3.7.0.js"></script>
 </head>
 <body>
     <h1>Isikan Data Makanan yang Akan Ditampilkan :</h1>

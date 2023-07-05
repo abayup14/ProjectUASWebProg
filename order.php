@@ -61,7 +61,7 @@
         }
     </style>
 </head>
-<script type="text/javascript" src="https://code.jquery.com/jquery-3.7.0.js"></script>
+<script type="text/javascript" src="js/jquery-3.7.0.js"></script>
 <body>
     <h1>Inilah Menu untuk Hari Ini : </h1>
     <div class="menu">
