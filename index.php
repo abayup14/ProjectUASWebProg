@@ -1,17 +1,5 @@
 <?php
     session_start();
-    function add_menu() {
-        $makanan = array(
-            "kode" => $_POST["txtkode"],
-            "nama" => $_POST["txtnama"],
-            "harga" => $_POST["txtharga"],
-            "url" => $_POST["txturl"]
-        );
-
-        $_SESSION["menu".count($_SESSION)] = $makanan;
-
-        // print_r($_SESSION);
-    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -85,6 +73,19 @@
     </div>
 </body>
 <?php
+    function add_menu() {
+        $makanan = array(
+            "kode" => $_POST["txtkode"],
+            "nama" => $_POST["txtnama"],
+            "harga" => $_POST["txtharga"],
+            "url" => $_POST["txturl"]
+        );
+
+        $_SESSION["menu".count($_SESSION)] = $makanan;
+
+        // print_r($_SESSION);
+    }
+    
     if (isset($_POST["btnmasuk"])) {
         $count = count($_SESSION);
         if ($count == 0) {
