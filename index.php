@@ -60,7 +60,7 @@
                     <input type="submit" value="Masukkan Data" name="btnmasuk">
                 </p>
             </form>
-            <form action="index.php" method="POST" enctype="multipart/form-data">
+            <form action="order.php" method="POST" enctype="multipart/form-data">
                 <p>
                     <input type="submit" value="Menuju halaman Pesan" name="btnOrder">
                 </p>
@@ -85,7 +85,7 @@
 
         // print_r($_SESSION);
     }
-    
+
     if (isset($_POST["btnmasuk"])) {
         $count = count($_SESSION);
         if ($count == 0) {
@@ -105,8 +105,8 @@
         }
     }
        
-    if (isset($_POST["btnOrder"])) {
+    /*if (isset($_POST["btnOrder"])) {
         header("location:order.php");
-    }
+    }*/
 ?>
 </html>
