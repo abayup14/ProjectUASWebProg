@@ -29,8 +29,13 @@
             text-align: center;
             margin: 5px;
         }
+        
+        .inilah-menu{
+            margin-left: 25px;
+            margin-bottom: 0px;
+        }
 
-        h2 {
+        .nama-menu {
             margin-top: 0px;
             margin-left: 5px;
             margin-right: 5px;
@@ -46,9 +51,8 @@
         }
 
         .menu {
-            width: 75%;
+            width: 70%;
             float: left;
-            margin-right: 50px;
         }
 
         .pilihan {
@@ -57,19 +61,19 @@
             float: right;
             width: 300px;
             margin-right:20px;
+            margin-top: 25px;
         }
-
     </style>
 </head>
 <script type="text/javascript" src="js/jquery-3.7.0.js"></script>
 <body>
-    <h1>Inilah Menu untuk Hari Ini</h1>
+    <h1 class="inilah-menu">Inilah Menu Untuk Hari Ini</h1>
     <div class="menu">
         <?php
             foreach ($arr_makanan as $makanan) {
                 echo "<div class='katalog'>";
                 echo "<img src='".$makanan['url']."'>";
-                echo '<h2>'.$makanan['nama'].'</h2>';
+                echo '<h2 class="nama-menu">'.$makanan['nama'].'</h2>';
                 echo '<h3> Rp. '.$makanan['harga'].'</h3>';
                 echo "<button class='btnPilih' id='btnPilih".$makanan['kode']."' nama='".$makanan['nama']."' harga='".$makanan['harga']."'>Pilih</button>";
                 echo "</div>";
@@ -98,7 +102,6 @@
         <h1>Pilihanku: </h1>
         <div class="hargaTambah"></div>
         <h2>TOTAL : Rp. <span id='grandtotal'>0</span></h2>
-        <br><br>
         <form action="index.php" method="POST" enctype="multipart/form-data">
             <p>
                 <input type="submit" value="Menuju halaman Masukkan Data" name="btnIndex">

@@ -41,7 +41,7 @@
             align: center;
             margin: auto;
             background: orange;
-            height:265px;
+            height:345px;
             width:390px;
         }
     </style>
@@ -50,34 +50,38 @@
 <body>
     <h1>Isikan Data Makanan yang Akan Ditampilkan</h1>
     <div id="outer">    
-    <div id="container">
-        <form action="index.php" method="POST" enctype="multipart/form-data">
-            <p>
-                <label>Kode Makanan <span class="important">*</span> : </label>
-                <input type="text" name="txtkode" required>
-            </p>
-            <p>
-                <label>Nama Makanan <span class="important">*</span> : </label>
-                <input type="text" name="txtnama" required>
-            </p>
-            <p>
-                <label>Harga Makanan <span class="important">*</span> : </label>
-                <input type="number" name="txtharga" required>
-            </p>
-            <p>
-                <label>Alamat Foto Makanan <span class="important">*</span> : </label>
-                <input type="url" name="txturl" required>
-            </p>
-            <p>
-                <input type="submit" value="Masukkan Data" name="btnmasuk">
-            </p>
-        </form>
-        <form action="index.php" method="POST" enctype="multipart/form-data">
-            <p>
-                <input type="submit" value="Menuju halaman Pesan" name="btnOrder">
-            </p>
-        </form>
-    </div>
+        <div id="container">
+            <form action="index.php" method="POST" enctype="multipart/form-data">
+                <p>
+                    <label>Kode Makanan <span class="important">*</span> : </label>
+                    <input type="text" name="txtkode" required>
+                </p>
+                <p>
+                    <label>Nama Makanan <span class="important">*</span> : </label>
+                    <input type="text" name="txtnama" required>
+                </p>
+                <p>
+                    <label>Harga Makanan <span class="important">*</span> : </label>
+                    <input type="number" name="txtharga" required>
+                </p>
+                <p>
+                    <label>Alamat Foto Makanan <span class="important">*</span> : </label>
+                    <input type="url" name="txturl" required>
+                </p>
+                <p>
+                    <input type="submit" value="Masukkan Data" name="btnmasuk">
+                </p>
+            </form>
+            <form action="index.php" method="POST" enctype="multipart/form-data">
+                <p>
+                    <input type="submit" value="Menuju halaman Pesan" name="btnOrder">
+                </p>
+            </form>
+            Dibuat oleh: <br>
+            160421001 / Ignatius Steven Christopher B. <br>
+            160421005 / Felicia <br>
+            160421058 / Andreas Bayu Prakasa <br>
+        </div>
     </div>
 </body>
 <?php
@@ -90,9 +94,11 @@
             foreach ($_SESSION as $menu) {
                 if ($menu["kode"] == $_POST["txtkode"]) {
                     echo "<script>alert('Kode makanan sudah digunakan. Gunakan kode yang lain.')</script>";
-                } else {
+                } 
+                else{
                     add_menu();
                     echo "<script>alert('Makanan berhasil ditambahkan')</script>";
+                    break;
                 }
             }
         }
