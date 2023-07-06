@@ -27,7 +27,7 @@
             text-align: center; 
         }
         #container {
-            align: center;
+            text-align: center;
             width: fit-content;
             border: solid;
             margin-top: 10px; margin-bottom: -10px;
@@ -38,7 +38,7 @@
             position:absolute;
         }
         #outer {
-            align: center;
+            text-align: center;
             margin: auto;
             background: orange;
             height:345px;
